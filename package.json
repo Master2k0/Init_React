@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint:es": "eslint . --ext ts,tsx,js",
     "lint:style": "stylelint 'src/**/styled.ts' 'src/**/*.tsx'",
-    "lint": "yarn lint:es && yarn lint:style"
+    "lint": "yarn lint:es && yarn lint:style",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx, src --fix "
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
@@ -31,11 +32,13 @@
     "eslint-config-standard-with-typescript": "^27.0.1",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "prettier": "^2.8.3",
     "stylelint": "^14.16.1",
     "stylelint-a11y": "^1.2.3",

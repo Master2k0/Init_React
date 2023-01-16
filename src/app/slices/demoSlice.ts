@@ -1,8 +1,9 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
+import { IDemoSlice } from 'types/redux/demoSlice.d';
+
 import type { RootState } from '@/app/store';
 import { getDemoById } from '@/app/thunks/demoThunk';
-import { IDemoSlice } from 'types/redux/demoSlice.d';
-import { useSelector } from 'react-redux';
 
 const initialState: IDemoSlice = {
   value: 0,

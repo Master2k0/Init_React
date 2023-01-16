@@ -1,4 +1,5 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit';
+
 import { decrement, increment } from '../slices/demoSlice';
 
 const listenerDemoMiddleware = createListenerMiddleware();

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '@/app/hooks';
+
+import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { decrement, increment } from '@/app/slices/demoSlice';
 import { RootState } from '@/app/store';
 import { getDemoById } from '@/app/thunks/demoThunk';
@@ -19,9 +20,13 @@ function Counter() {
   }, []);
   return (
     <div>
-      <div onClick={handleIncreare}>+</div>
+      <div id="increase" onClick={handleIncreare} aria-hidden="true">
+        +
+      </div>
       {count}
-      <div onClick={handleDecrease}>-</div>
+      <div id="decrease" onClick={handleDecrease} aria-hidden="true">
+        -
+      </div>
     </div>
   );
 }

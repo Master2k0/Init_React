@@ -1,0 +1,10 @@
+tailwind.config.js
+postcss.config.js
+build
+package.json
+tsconfig.json
+tsconfig.node.json
+tsconfig.eslint.json
+vite.config.ts
+public
+dist
