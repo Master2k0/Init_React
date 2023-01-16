@@ -1,7 +1,7 @@
-import { createListenerMiddleware } from "@reduxjs/toolkit";
-import { decrement, increment } from "../slices/demoSlice";
-const listenerDemoMiddleware = createListenerMiddleware();
+import { createListenerMiddleware } from '@reduxjs/toolkit';
+import { decrement, increment } from '../slices/demoSlice';
 
+const listenerDemoMiddleware = createListenerMiddleware();
 // Add one or more listener entries that look for specific actions.
 // They may contain any sync or async logic, similar to thunks.
 listenerDemoMiddleware.startListening({
@@ -11,10 +11,10 @@ listenerDemoMiddleware.startListening({
     console.log(listenerApi.getOriginalState());
     console.log(action);
     console.log(listenerApi.getState());
-    console.log("Increment action dispatched");
+    console.log('Increment action dispatched');
     await listenerApi.delay(2000);
-    console.log("Decreate action dispatched after 2s");
-    await listenerApi.dispatch(decrement());
+    console.log('Decreate action dispatched after 2s');
+    listenerApi.dispatch(decrement());
     listenerApi.cancelActiveListeners();
   },
 });
@@ -34,9 +34,9 @@ listenerDemoMiddleware.startListening({
 //   actionCreator: decrement,
 //   effect: async (action, listenerApi) => {
 //     // Run whatever additional side-effect-y logic you want here
-//     console.log("Decrement action dispatched");
+//     console.log('Decrement action dispatched');
 //     await listenerApi.delay(2000);
-//     console.log("Increment action dispatched after 2s");
+//     console.log('Increment action dispatched after 2s');
 //     await listenerApi.dispatch(increment());
 //     listenerApi.cancelActiveListeners();
 //   },

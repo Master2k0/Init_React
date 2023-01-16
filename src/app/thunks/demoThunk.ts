@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // First, create the thunk
 
@@ -7,17 +7,17 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 //   async (userId, thunkAPI) => {
 //     const response = await userAPI.fetchById(userId)
 //     return response.data
+
 //   }
 // )
-
 export const getDemoById = createAsyncThunk(
-  "demo/getDemoById",
+  'demo/getDemoById',
   async (data: any, thunkApi) => {
-    const response = await {
+    const response = {
       data: {
         initValue: 0,
       },
     };
     return response?.data;
-  }
+  },
 );

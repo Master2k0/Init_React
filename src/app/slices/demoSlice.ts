@@ -1,9 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "@/app/store";
-import { IDemoSlice } from "types/redux/demoSlice.d";
-import { useSelector } from "react-redux";
-import { getDemoById } from "@/app/thunks/demoThunk";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { RootState } from '@/app/store';
+import { getDemoById } from '@/app/thunks/demoThunk';
+import { IDemoSlice } from 'types/redux/demoSlice.d';
+import { useSelector } from 'react-redux';
 
 const initialState: IDemoSlice = {
   value: 0,
@@ -11,7 +10,7 @@ const initialState: IDemoSlice = {
 };
 
 export const demoSlice = createSlice({
-  name: "demo",
+  name: 'demo',
   initialState,
   reducers: {
     increment: (state) => {
@@ -45,6 +44,6 @@ const { actions, reducer } = demoSlice;
 
 export const { increment, decrement, incrementByAmount } = actions;
 
-export const selectDemo = (state: RootState) => state.demo.value;
+export const selectDemo = (state: RootState): number => state.demo.value;
 
 export default reducer;
