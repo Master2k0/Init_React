@@ -3,9 +3,11 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "@/app/store";
 import { IDemoSlice } from "types/redux/demoSlice.d";
 import { useSelector } from "react-redux";
+import { getDemoById } from "@/app/thunks/demoThunk";
 
 const initialState: IDemoSlice = {
   value: 0,
+  loading: false,
 };
 
 export const demoSlice = createSlice({
@@ -22,10 +24,27 @@ export const demoSlice = createSlice({
       state.value += action.payload;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(getDemoById.pending, (state, action) => {
+      state.loading = true;
+      // Do something here while wait api resonse
+    });
+    builder.addCase(getDemoById.fulfilled, (state, action) => {
+      // Do something with data from api response
+      state.loading = false;
+      state.value = action.payload?.initValue as unknown as number;
+    });
+    builder.addCase(getDemoById.rejected, (state, action) => {
+      // Do something when call api fail
+      state.loading = false;
+    });
+  },
 });
 
-export const { increment, decrement, incrementByAmount } = demoSlice.actions;
+const { actions, reducer } = demoSlice;
+
+export const { increment, decrement, incrementByAmount } = actions;
 
 export const selectDemo = (state: RootState) => state.demo.value;
 
-export default demoSlice.reducer;
+export default reducer;
