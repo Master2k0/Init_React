@@ -37,7 +37,8 @@
     "@typescript-eslint/no-unused-expressions": "warn",
     "react/react-in-jsx-scope": "off",
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "@typescript-eslint/no-floating-promises": "off"
   },
   "settings": {
     "import/parsers": {
