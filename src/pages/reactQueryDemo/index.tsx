@@ -23,7 +23,7 @@ function ReactQueryDemo() {
       {data != null && data.length > 0
         ? data.map((post: IPost) => <p key={post.id}>{post.title}</p>)
         : null}
-      {isFetching ? <p>Updating... {isFetching}</p> : null}
+      {isFetching ? <p>Updating... testing{isFetching}</p> : null}
     </div>
   );
 }
