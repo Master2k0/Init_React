@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Counter from '@/pages/reduxDemo';
 
 import reactLogo from './assets/react.svg';
+import ReactQueryDemo from './pages/reactQueryDemo';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,6 +38,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <Counter />
+      <ReactQueryDemo />
     </div>
   );
 }
